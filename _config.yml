@@ -70,7 +70,7 @@ theme: next
 deploy:
   type: git
   repo: git@github.com:tetsuyas1/tetsuyas1.github.io.git
-  branch: master
+  branch: gh-pages
 
 
 ## https://github.com/hexojs/hexo-generator-feed
