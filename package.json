@@ -5,6 +5,11 @@
   "hexo": {
     "version": ""
   },
+  "script": {
+    "start": "./node_modules/.bin/hexo server",
+    "create": "./node_modules/.bin/hexo new",
+    "deploy": "./node_modules/.bin/hexo deploy -g"
+  },
   "dependencies": {
     "hexo": "^3.2.0",
     "hexo-generator-archive": "^0.1.4",
