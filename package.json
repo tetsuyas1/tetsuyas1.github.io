@@ -5,7 +5,7 @@
   "hexo": {
     "version": "3.2.2"
   },
-  "script": {
+  "scripts": {
     "start": "./node_modules/.bin/hexo server",
     "create": "./node_modules/.bin/hexo new",
     "deploy": "./node_modules/.bin/hexo deploy -g"
