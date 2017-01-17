@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
-timezone:
+title: デザインルール・ブログ
+subtitle: 株式会社デザインルールの各種ご案内・技術情報・代表のつぶやきなどを掲載するブログです。
+description: デザインルールの公式ブログです。
+author: 株）デザインルール代表　佐藤哲也またはメンバー
+language: ja
+timezone: Asia/Tokyo
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://blog.designrule.jp
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -63,9 +63,11 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:tetsuyas1/tetsuyas1.github.io.git
+  branch: master
