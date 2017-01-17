@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.designrule.jp/README.html</loc>
+    
+    <lastmod>2017-01-17T16:36:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.designrule.jp/2017/01/18/hello-world/</loc>
     
     <lastmod>2017-01-17T16:01:59.000Z</lastmod>
