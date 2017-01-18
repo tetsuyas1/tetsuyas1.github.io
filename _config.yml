@@ -84,3 +84,7 @@ feed:
 ## https://github.com/hexojs/hexo-generator-sitemap
 sitemap:
   path: sitemap.xml
+
+
+## ignore exchange
+skip_render: README.md
