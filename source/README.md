@@ -2,10 +2,10 @@
 
 
 ### 環境構築
-- git clone
-- npm install
-
-
+```bash
+git clone 
+npm install
+```
 
 ### 記事を作成する
 
@@ -21,17 +21,24 @@ npm run start
 
 
 ### 記事の公開
-```aidl
+
+```
 npm run deploy
 ```
 
-### npm run と　ローカルへのhexoインストールについて
-- 私の環境では、本がいローカルにhexoをインストールしているため、
+### 静的ファイルの生成
+
+```
+npm run generate
+```
+
+
+### npm run と　ローカルへのhexoインストールについて（メモ）
+- 私の環境では、ローカルにhexoをインストールしているため、
 ```aidl
 ./node_modules/.bin/hexo  
 ```
-と実行する必要があるが、package.jsonでスクリプト実行できるようにしている。
-
+と実行する必要がある。
 
 
 ## 参考
