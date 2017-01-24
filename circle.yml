@@ -1,0 +1,21 @@
+machine:
+  timezone:
+    Asia/Tokyo
+  node:
+    version: 6.3.1
+
+deployment:
+    production:
+      branch: master
+      commands:
+        - git config --global user.email "new.frontier2006@gmail.com"
+        - git config --global user.name "Circle CI"
+        - git submodule init
+        - git submodule update
+        - ./node_modules/.bin/hexo clean
+        - ./node_modules/.bin/hexo generate
+        - ./node_modules/.bin/hexo deploy
+
+notify:
+  webhooks:
+    - url: https://script.google.com/macros/s/AKfycbwVBVbdtQLu6-NccBZfiX5OgBG21bft2brV4atz0GZTL9nnL8s/exec?room=blog
