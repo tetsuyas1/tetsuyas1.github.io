@@ -6,7 +6,7 @@
     "version": "3.2.2"
   },
   "scripts": {
-    "test" : "textlint source/_posts/*.md",
+    "test": "textlint source/_posts/*.md",
     "start": "./node_modules/.bin/hexo server",
     "create": "./node_modules/.bin/hexo new",
     "deploy": "./node_modules/.bin/hexo deploy -g",
@@ -30,6 +30,7 @@
     "textlint": "^7.2.1",
     "textlint-rule-max-ten": "^2.0.3",
     "textlint-rule-no-mix-dearu-desumasu": "^3.0.3",
+    "textlint-rule-preset-japanese": "^1.3.4",
     "textlint-rule-spellcheck-tech-word": "^5.0.0"
   }
 }
