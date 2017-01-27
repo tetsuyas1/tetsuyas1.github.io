@@ -1,3 +1,7 @@
+general:
+  branches:
+    ignore:
+      - master
 machine:
   timezone:
     Asia/Tokyo
@@ -6,7 +10,7 @@ machine:
 
 deployment:
     production:
-      branch: master
+      branch: develop
       commands:
         - git config --global user.email "new.frontier2006@gmail.com"
         - git config --global user.name "Circle CI"
