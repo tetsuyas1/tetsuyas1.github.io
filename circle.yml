@@ -7,10 +7,30 @@ machine:
     Asia/Tokyo
   node:
     version: 6.3.1
+    
+dependencies:
+  pre:
+    - sudo debconf-set-selections $HOME/$CIRCLE_PROJECT_REPONAME/postfix.preseed
+    - sudo apt-get update; sudo apt-get --yes --force-yes install mailutils
+    - |
+      sudo sh -c "echo '
+      relayhost = [smtp.gmail.com]:587
+      smtp_sasl_auth_enable = yes
+      smtp_sasl_password_maps = hash:/etc/postfix/sasl/password
+      smtp_sasl_security_options = noanonymous
+      smtp_sasl_tls_security_options = noanonymous
+      smtp_sasl_mechanism_filter = plain
+      smtp_use_tls = yes' >> /etc/postfix/main.cf"
+    - sudo sh -c "echo '[smtp.gmail.com]:587 ${FROM_ADDRESS}:${FROM_PASSWORD}' > /etc/postfix/sasl/password"
+    - sudo chown root. /etc/postfix/sasl/password
+    - sudo chmod 600 /etc/postfix/sasl/password
+    - sudo postmap /etc/postfix/sasl/password
+    - sudo service postfix restart
 
 test:
   override:
-    - npm test -- --no-color -f junit -o $CIRCLE_TEST_REPORTS/textlint/textlint.xml
+    - npm test -- --no-color -f pretty-error -o $CIRCLE_TEST_REPORTS/textlint/textlint.txt
+    - cat $CIRCLE_TEST_REPORTS/textlint/textlint.txt | mail -s "Request: Review Lint" `git log HEAD^..HEAD --pretty='%aE' | head -n1`
 
 deployment:
     production:
