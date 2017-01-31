@@ -14,14 +14,14 @@ dependencies:
     - sudo apt-get update; sudo apt-get --yes --force-yes install mailutils
     - |
       sudo sh -c "echo '
-      relayhost = [smtp.gmail.com]:587
+      relayhost = [smtp.lolipop.jp]:587
       smtp_sasl_auth_enable = yes
       smtp_sasl_password_maps = hash:/etc/postfix/sasl/password
       smtp_sasl_security_options = noanonymous
       smtp_sasl_tls_security_options = noanonymous
       smtp_sasl_mechanism_filter = plain
       smtp_use_tls = yes' >> /etc/postfix/main.cf"
-    - sudo sh -c "echo '[smtp.gmail.com]:587 ${FROM_ADDRESS}:${FROM_PASSWORD}' > /etc/postfix/sasl/password"
+    - sudo sh -c "echo '[smtp.lolipop.jp]:587 ${FROM_ADDRESS}:${FROM_PASSWORD}' > /etc/postfix/sasl/password"
     - sudo chown root. /etc/postfix/sasl/password
     - sudo chmod 600 /etc/postfix/sasl/password
     - sudo postmap /etc/postfix/sasl/password
