@@ -23,3 +23,4 @@ deployment:
 notify:
   webhooks:
     - url: https://script.google.com/macros/s/AKfycbwVBVbdtQLu6-NccBZfiX5OgBG21bft2brV4atz0GZTL9nnL8s/exec?room=blog
+    - url: https://hooks.zapier.com/hooks/catch/1321736/h538fe/
