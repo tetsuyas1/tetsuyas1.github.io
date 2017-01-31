@@ -30,7 +30,8 @@ dependencies:
 test:
   override:
     - npm test -- --no-color -f pretty-error -o $CIRCLE_TEST_REPORTS/textlint/textlint.txt
-    - cat $CIRCLE_TEST_REPORTS/textlint/textlint.txt | mail -s "Request: Review Lint" `git log HEAD^..HEAD --pretty='%aE' | head -n1`
+    - |
+      cat $CIRCLE_TEST_REPORTS/textlint/textlint.txt | mail -s "MIP サークルCIの校正結果" `git log HEAD^..HEAD --pretty='%aE' | head -n1`
 
 deployment:
     production:
