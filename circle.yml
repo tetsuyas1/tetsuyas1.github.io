@@ -11,7 +11,7 @@ machine:
 dependencies:
   pre:
     - sudo debconf-set-selections $HOME/$CIRCLE_PROJECT_REPONAME/postfix.preseed
-    - sudo apt-get update; sudo apt-get install mailutils
+    - sudo apt-get update; sudo apt-get --yes --force-yes install mailutils
     - |
       sudo sh -c "echo '
       relayhost = [smtp.gmail.com]:587
