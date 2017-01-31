@@ -46,7 +46,8 @@ deployment:
       branch: /.*/
       commands:
         - |
-            cat $CIRCLE_TEST_REPORTS/textlint/textlint.txt | mail -s "Request: Review Lint" `git log HEAD^..HEAD --pretty='%aE' | head -n1`
+          git log HEAD^..HEAD --pretty='%aE' | head -n1
+          cat $CIRCLE_TEST_REPORTS/textlint/textlint.txt | mail -s "Request: Review Lint" `git log HEAD^..HEAD --pretty='%aE' | head -n1`
 
 notify:
   webhooks:
