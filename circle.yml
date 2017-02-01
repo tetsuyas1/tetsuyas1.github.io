@@ -14,8 +14,6 @@ dependencies:
     - sudo apt-get update; sudo apt-get --yes --force-yes install mailutils
     - |
       sudo sh -c "echo '
-      mydomain = tetsuyas.net
-      myorigin = \$mydomain
       relayhost = [smtp.lolipop.jp]:587
       smtp_sasl_auth_enable = yes
       smtp_sasl_password_maps = hash:/etc/postfix/sasl/password
@@ -33,7 +31,7 @@ test:
   override:
     - npm test -- --no-color -f pretty-error -o $CIRCLE_TEST_REPORTS/textlint/textlint.txt
     - |
-      cat $CIRCLE_TEST_REPORTS/textlint/textlint.txt | mail -s "MIP 校正結果" `git log HEAD^..HEAD --pretty='%aE' | head -n1`
+      cat $CIRCLE_TEST_REPORTS/textlint/textlint.txt | mail -s "MIP 校正結果" `git log HEAD^..HEAD --pretty='%aE' | head -n1` -aFrom:from@example.com info@tetsuyas.jp
 
 deployment:
     production:
