@@ -26,12 +26,12 @@ dependencies:
     - sudo chmod 600 /etc/postfix/sasl/password
     - sudo postmap /etc/postfix/sasl/password
     - sudo service postfix restart
-
+    
 test:
   override:
     - npm test -- --no-color -f pretty-error -o $CIRCLE_TEST_REPORTS/textlint/textlint.txt
     - |
-      subject = "[MIP]校正結果"
+      subject="[MIP]校正結果"
       inputEncoding="utf-8"
       outputEncoding="iso-2022-jp"
       subjectHead="=?$outputEncoding?B?"
