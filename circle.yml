@@ -7,8 +7,6 @@ machine:
     Asia/Tokyo
   node:
     version: 6.3.1
-  environment:
-    LANG: ja_JP.UTF-8
     
 dependencies:
   pre:
@@ -33,7 +31,7 @@ test:
   override:
     - npm test -- --no-color -f pretty-error -o $CIRCLE_TEST_REPORTS/textlint/textlint.txt
     - |
-      [ $? -ne 0 ] && cat $CIRCLE_TEST_REPORTS/textlint/textlint.txt | mail -s "MIP校正結果" `git log HEAD^..HEAD --pretty='%aE' | head -n1` -aFrom:info@tetsuyas.jp
+      [ $? -ne 0 ] && cat $CIRCLE_TEST_REPORTS/textlint/textlint.txt | mail -s "MIP Check Report" `git log HEAD^..HEAD --pretty='%aE' | head -n1` -aFrom:info@tetsuyas.jp
 
 deployment:
     production:
