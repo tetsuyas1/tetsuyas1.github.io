@@ -31,7 +31,7 @@ test:
   override:
     - npm test -- --no-color -f pretty-error -o $CIRCLE_TEST_REPORTS/textlint/textlint.txt
     - |
-      cat $CIRCLE_TEST_REPORTS/textlint/textlint.txt | mail -s "`echo '[MIP]校正結果' | iconv -f UTF-8 -t ISO-2022-JP`" `git log HEAD^..HEAD --pretty='%aE' | head -n1` -aFrom:info@tetsuyas.jp
+      [ $? ne 0 ] || cat $CIRCLE_TEST_REPORTS/textlint/textlint.txt | mail -s "`echo '[MIP]校正結果' | iconv -f UTF-8 -t ISO-2022-JP`" `git log HEAD^..HEAD --pretty='%aE' | head -n1` -aFrom:info@tetsuyas.jp
 
 deployment:
     production:
