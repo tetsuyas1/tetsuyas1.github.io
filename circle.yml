@@ -15,7 +15,7 @@ dependencies:
     - |
       sudo sh -c "echo '
       mydomain = tetsuyas.net
-      myorigin = tetsuyas.net
+      myorigin = $mydomain
       relayhost = [smtp.lolipop.jp]:587
       smtp_sasl_auth_enable = yes
       smtp_sasl_password_maps = hash:/etc/postfix/sasl/password
